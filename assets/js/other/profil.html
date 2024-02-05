@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <title>Profil</title>
+</head>
+<body>
+    
+  <div id="profile-container">
+    <img id="profile-picture" alt="Profil Fotoğrafı">
+    <p id="username"><span id="current-username">Kullanici123</span></p>
+    <p id="bio"><span id="current-bio">Bu benim bio.</span></p>
+     <div id="activity-container">
+      <div id="follows">
+        <p>Followers: <span id="followers">500</span></p>
+        <p>Following: <span id="following">200</span></p>
+      </div>
+    </div>
+    <button onclick="openEditModal()">Profil Düzenle</button>
+  </div>
+
+  <div id="edit-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeEditModal()">&times;</span>
+      <label for="new-username">Yeni Kullanıcı Adı:</label>
+      <input type="text" id="new-username">
+      <label for="new-bio">Yeni Bio:</label>
+      <textarea id="new-bio"></textarea>
+      <label for="new-profile-picture">Yeni Profil Fotoğrafı:</label>
+      <input type="file" id="new-profile-picture" accept="image/*">
+      <button onclick="updateProfile()">Güncelle</button>
+    </div>
+  </div>
+
+  <button onclick="showCreatePostForm()">Create Post</button>
+
+  <div id="create-post-form" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="hideCreatePostForm()">&times;</span>
+      <label for="post-image-input">Fotoğraf Yükle:</label>
+      <input type="file" id="post-image-input" accept="image/*" required>
+  
+      <label for="post-title">Başlık:</label>
+      <input type="text" id="post-title" required>
+  
+      <button onclick="addNewPost()">Gönder</button>
+    </div>
+  </div>
+  
+  <div id="posts-container"></div>
+
+  <script src="/assets/js/profil.js"></script>
+</body>
+</html>

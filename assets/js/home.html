@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>My Instagram Clone</title>
+</head>
+<body>
+
+    <div class="left-toolbar">
+        <div class="logo" onclick="showHomePage()">Logo</div>
+        <button onclick="showHomePage()">Anasayfa</button>
+        <button onclick="showProfilePage()"><a href="/other/profil.html">profil</a></button>
+        <button onclick="showNotificationsPage()">Bildirimler</button>
+        <button onclick="showChatPage()">Sohbet</button>
+        <button onclick="showSettings()">Ayarlar</button>
+    </div>
+ 
+
+ 
+    <div class="content">
+          <div class="followed-profiles">
+        
+        <ul id="followedProfilesList"></ul>
+    </div>
+        <div id="postList"></div>
+    </div>
+
+ 
+    <div class="right-toolbar">
+        <button onclick="search()">Ara</button>
+        <button onclick="showBookmarks()">Beğenilenler</button>
+        <button onclick="showSavedPosts()">Kaydedilenler</button>
+        <button onclick="showSettings()">Ayarlar</button>
+    </div>
+
+    <script src="./assets/js/home.js"></script>
+</body>
+</html>

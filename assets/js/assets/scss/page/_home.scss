@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    display: flex;
+    
+}
+
+.left-toolbar, .right-toolbar {
+    background-color: #9d26af;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:black;
+    
+}
+ .followed-profiles {
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+  ul{    list-style: none;
+    display: flex;
+    gap: 20px;}
+
+}
+.right-toolbar {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.left-toolbar button, .right-toolbar button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Ana içerik alanı için stil */
+.content {
+    flex: 6; /* İçerik alanını genişletmek için */
+    padding: 20px;
+    text-align: center;
+    .postlist{
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        margin: 80px;
+        padding: 50px;
+        text-align: center;
+    .post {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+ text-align: end;
+
+.post img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.post button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+}}
+}
+
+.followed-profiles h2 {
+    margin-bottom: 10px;
+}
+
+.followed-profiles ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.followed-profiles li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #3498db;
+    font-weight: bold;
+  
+  
+}
+
+
+
+
+
+/* Daha fazla stil ekleyebilirsiniz */

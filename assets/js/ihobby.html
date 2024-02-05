@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <title>Login</title>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <h1>Logo</h1>
+    </div>
+    <div class="form-container">
+ 
+      <form id="loginForm">
+        <input type="text" id="email" name="email" required placeholder="Email or telephone number">
+        <input type="password" id="password" name="password" required placeholder="Password">
+        <button type="button" onclick="validateLogin()"><a href="./home.html">Log In</a></button>
+        <div class="question">
+          <div class="forgot-password">
+            <a href="#" id="forgotPasswordLink">Forgot password?</a>
+          </div>
+          <div class="create-account">
+            <a href="#" id="goToRegister">Don't have an account?</a>
+          </div>
+        </div>
+      </form>
+
+   
+      <form id="registerForm" class="hidden">
+        <input type="text" id="registerEmail" name="registerEmail" required placeholder="Email">
+        <input type="password" id="registerPassword" name="registerPassword" required placeholder="Password">
+        <button type="button" onclick="registerAccount()">Register</button>
+        <div class="question">
+          <div class="login-instead">
+            <a href="#" id="goToLogin">Already have an account? Log in</a>
+          </div>
+        </div>
+      </form>
+
+      <div id="resetPasswordForm" class="hidden">
+        <h2>Reset Password</h2>
+        <input type="text" id="resetEmail" name="resetEmail" required placeholder="Enter your email">
+        <button type="button" onclick="resetPassword()">Reset Password</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/js/ihobby.js"></script>
+</body>
+</html>

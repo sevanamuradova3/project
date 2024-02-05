@@ -1,0 +1,353 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.logo {
+  flex: 1;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.form-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 300px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.542);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 0.5px solid rgb(218, 213, 213);
+}
+
+button {
+  width: 100%;
+  background-color: #bb18f2;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+button:hover {
+  background-color: #a017e2;
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.question .forgot-password a {
+  color: #bb18f2;
+  margin-right: 60px;
+}
+.question .create-account a {
+  color: #bb18f2;
+  text-decoration: underline;
+}
+
+/* Şifre sıfırlama formunu gizlemek için kullanılan stil */
+.hidden {
+  display: none;
+}
+
+#resetPasswordForm {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 200px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.542);
+  background-color: #f4f4f4;
+  margin-top: 20px;
+}
+#resetPasswordForm input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 0.5px solid rgb(218, 213, 213);
+}
+#resetPasswordForm button {
+  width: 100%;
+  background-color: #bb18f2;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+#resetPasswordForm button:hover {
+  background-color: #a017e2;
+}
+
+/* Giriş ve kayıt formlarını birleştiren stil */
+.login-register-forms form {
+  margin-bottom: 20px;
+}
+.login-register-forms #registerForm {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  display: flex;
+}
+
+.left-toolbar, .right-toolbar {
+  background-color: #9d26af;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+}
+
+.followed-profiles {
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+.followed-profiles ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.right-toolbar {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.left-toolbar button, .right-toolbar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Ana içerik alanı için stil */
+.content {
+  flex: 6; /* İçerik alanını genişletmek için */
+  padding: 20px;
+  text-align: center;
+}
+.content .postlist {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 80px;
+  padding: 50px;
+  text-align: center;
+}
+.content .postlist .post {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: end;
+}
+.content .postlist .post .post img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+.content .postlist .post .post button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.followed-profiles h2 {
+  margin-bottom: 10px;
+}
+
+.followed-profiles ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.followed-profiles li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #3498db;
+  font-weight: bold;
+}
+
+/* Daha fazla stil ekleyebilirsiniz */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#profile-picture {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+#username,
+#bio {
+  margin-bottom: 10px;
+}
+
+#activity-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+#follows p {
+  margin: 0;
+}
+
+#posts-container h2 {
+  margin-bottom: 10px;
+}
+#posts-container .post {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+#posts-container .post img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+#posts-container .post .post-title {
+  font-size: 18px;
+  margin: 10px 0;
+}
+#posts-container .post .post-actions {
+  display: flex;
+  justify-content: space-between;
+}
+#posts-container .post .post-actions button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+#posts-container .post .post-actions button:hover {
+  background-color: #45a049;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
