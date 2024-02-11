@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+  <title>Profil</title>
+ 
+    
+  
+</head>  <body>
+ 
+  <div class="left-toolbar">
+    
+    <div class="logo" onclick="showHomePage()">logo</div>
+    <button onclick="showHomePage()">Home</button>
+    <button onclick="showProfilePage()"><a href="/other/profil.html">Profil</a></button>
+    <button onclick="showNotificationsPage()">Notfication</button>
+    <button onclick="showChatPage()">Chat</button>
+    <button onclick="showSettings()">Settings</button>
+</div>
+<div class="right-place"><div id="profile-container">
+    <img id="profile-picture" alt="Profil Fotoğrafı">
+    
+      
+   
+     <div id="activity-container">
+      <div id="follows"> 
+        <p id="username"><span id="current-username">Kullanici123</span></p>
+        <span id="followingCount">(0)</span><button id="followingButton" onclick="showFollowingList()">Following </button>
+ 
+    
+          <button class="editbtn" onclick="openEditModal()">Profil Düzenle</button>
+
+      </div>
+    </div>    
+  </div>
+<p id="bio"><span id="current-bio">Biography</span></p>
+
+  <div id="edit-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeEditModal()">&times;</span>
+      <label for="new-username">New username</label>
+      <input type="text" id="new-username">
+      <label for="new-bio">New Bio:</label>
+      <textarea id="new-bio"></textarea>
+      <label for="new-profile-picture">New profil Photo</label>
+      <input type="file" id="new-profile-picture" accept="image/*" required>
+      <button onclick="updateProfile()">Update</button>
+    </div>
+  </div>
+
+ 
+  <div id="create-post-form" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="hideCreatePostForm()">&times;</span>
+      <label for="post-image-input">Fotoğraf Yükle:</label>
+      <input type="file" id="post-image-input" accept="image/*" required>
+  
+      <label for="post-title">Caption</label>
+      <input type="text" id="post-title" required>
+  
+      <button onclick="addNewPost()">Post</button>
+    </div>
+  </div>
+  
+  <div id="posts-container" class="post-columns"></div>
+</div>
+ 
+<div class="right-toolbar">
+  <div class="fllw">
+   <h1>User Profiles</h1>
+   <div class="searchByName">
+    <input type="text" id="searchInput" placeholder="Search by name">
+  <button id="searchButton" onclick="searchUsers()">s</button>
+  </div>
+ 
+  <div id="searchResults"></div>
+  <div id="followingList">
+   
+    <ul id="followingUsers"></ul>
+</div>
+
+  <button onclick="showCreatePostForm()"><i class="fa-solid fa-plus"></i>  Create</button>
+</div>
+  <button onclick="showBookmarks()">Like</button>
+  <button onclick="showSavedPosts()">Save</button>
+  <button onclick="showSettings()">Settings</button>
+</div> 
+  <script src="/assets/js/profil.js"></script>
+</body>
+
+</html>

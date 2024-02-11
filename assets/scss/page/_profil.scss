@@ -1,0 +1,241 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.left-toolbar , .right-toolbar {
+   
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:black;
+    
+}
+
+
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+ 
+}
+
+
+  h1 {
+    text-align: center;
+  }
+  .searchByName{
+display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  #searchInput {
+    
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    
+border-bottom-left-radius:10px; 
+border-top-left-radius:10px;
+ }
+  #searchButton{
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    
+    cursor: pointer;
+   
+  }
+   #followingButton {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+   
+  }
+  #searchButton:hover, #followingButton:hover {
+    background-color: transparent;
+  }
+  #searchResults {
+    margin-top: 20px;
+  }
+  .user-profile {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .user-profile h3 {
+    margin-top: 0;
+  }
+  .user-profile p {
+    margin-bottom: 5px;
+  }
+  .follow-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  .follow-button:hover {
+    background-color: #45a049;
+  }
+
+  
+  #followingUsers {
+    list-style-type: none; /* Madde işaretlerini kaldırır */
+    padding: 0; /* Boşlukları kaldırır */
+}
+
+#followingUsers li {
+    margin-bottom: 5px; /* Her liste öğesi arasına boşluk ekler */
+    padding: 5px; /* Öğelerin iç boşluğunu belirler */
+    border: 1px solid #ccc; /* Kenarlık ekler */
+    background-color: #f9f9f9; /* Arka plan rengini belirler */
+}
+
+#profile-container {
+    display: flex;
+   
+   gap: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+   
+    #follows{
+        display: flex;
+    }
+}
+
+#profile-picture {
+    max-width: 100%;
+    width: 300px;
+    height: 200px;
+
+    border-radius: 50%;
+   
+}
+
+#username,
+#bio {
+    margin-bottom: 10px;
+}
+
+#activity-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+}
+    .editbtn{
+        height: 30px;
+        width: 200px;
+        padding: 10px;
+      }
+    
+#follows {
+    
+    p,.editbtn{
+        margin: 20px;
+    }
+}
+
+#posts-container {
+    h2 {
+        margin-bottom: 10px;
+    }
+
+    .post {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        padding: 10px;
+
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .post-title {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .post-actions {
+            display: flex;
+            justify-content: space-between;
+
+            button {
+                background-color: #4caf50;
+                color: white;
+                padding: 10px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-right: 5px;
+
+                &:hover {
+                    background-color: #45a049;
+                }
+            }
+        }
+    }
+}
+.post-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.post {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+    img{
+        max-width: 100%;width: 300px;
+    height: 300px; 
+    } 
+    overflow: hidden;
+  
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}

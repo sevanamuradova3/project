@@ -1,41 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/css/main.css">
+
   <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./assets/css/main.css">
 </head>
+
 <body>
   <div class="container">
-    <div class="logo">
-      <h1>Logo</h1>
-      <!-- Logo içeriği buraya eklenebilir -->
-    </div>
-    <div class="form-container">
-      <form id="loginForm">
-      
-        <input type="text" id="email" name="email" required placeholder="email or telephone number">
+    <div class="row">
+      <div class="col-xl-6 col-sm-12">
+        <div class="loginLogo">
+          <i id="logoicon" class="fa-solid fa-hashtag"></i>
+          <h1>Wellcome!</h1>
+        </div>
+      </div>
+      <div class="col-xl-6 col-sm-12">
+        <div class="form-container">
 
-       
-        <input type="password" id="password" name="password" required placeholder="password">
+          <form id="loginForm">
+            <input id="loginInp" type="text" id="email" name="email" required placeholder="Email or telephone number">
+            <input id="loginInp" type="password" id="password" name="password" required placeholder="Password">
+            <button id="log" type="button" onclick="validateLogin()"><a href="./home.html">Log In</a></button>
+            <div class="question">
+              <div class="forgot-password">
+                <a href="#" id="forgotPasswordLink">Forgot password?</a>
+              </div>
+              <div class="create-account">
+                <a href="#" id="goToRegister">Don't have an account?</a>
+              </div>
+            </div>
+          </form>
 
-        <button type="button" onclick="validateLogin()">Log In</button>
-<div class="question">
- <div class="forgot-password">
-          <a href="#">Forgot password?</a>
+
+          <form id="registerForm" class="hidden">
+            <input type="text" id="registerEmail" name="registerEmail" required placeholder="Email">
+            <input type="password" id="registerPassword" name="registerPassword" required placeholder="Password">
+            <button type="button" onclick="registerAccount()">Register</button>
+            <div class="question">
+              <div class="login-instead">
+                <a href="#" id="goToLogin">Already have an account? Log in</a>
+              </div>
+            </div>
+          </form>
+
+          <div id="resetPasswordForm" class="hidden">
+            <h2>Reset Password</h2>
+            <input type="text" id="resetEmail" name="resetEmail" required placeholder="Enter your email">
+            <button type="button" onclick="resetPassword()">Reset Password</button>
           </div>
-        <div class="create-account">
-            <a href="#">Don't have an account?</a>
-          </div>
-</div>
-       
-      </form>
+
+        </div>
+      </div>
+
     </div>
   </div>
 
   <script src="./assets/js/ihobby.js"></script>
 </body>
-</html>
 
 </html>
