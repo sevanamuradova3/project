@@ -44,6 +44,8 @@ function updateProfile() {
 }
 
 // Diğer fonksiyonlarınızı buraya ekleyin...
+// Takip edilen kullanıcıları saklamak için boş bir dizi tanımlayın
+var followingUsers = [];
 
 function searchUsers() {
     var searchInput = document.getElementById('searchInput').value.trim().toLowerCase();
@@ -115,6 +117,12 @@ function showFollowingList() {
     });
 }
 
+// Sayfa yüklendiğinde takip edilen kullanıcıları yükleyin
+document.addEventListener('DOMContentLoaded', function () {
+    loadFollowingList();
+});
+
+
 function saveUserProfile() {
     localStorage.setItem('userProfile', JSON.stringify(userProfile));
 }
@@ -174,7 +182,7 @@ function addNewPost() {
 
         reader.readAsDataURL(imageInput.files[0]);
     } else {
-        alert("Lütfen bir resim dosyası seçin.");
+        alert("Please select an image file.");
     }
 }
 
@@ -200,9 +208,7 @@ function commentOnPost(index, comment) {
     userPosts[index].comments.push(comment);
     renderUserPosts();
     saveToLocalStorage();
-}
-
-function renderUserPosts() {
+}function renderUserPosts() {
     var postContainer = document.getElementById('posts-container');
 
     postContainer.innerHTML = '';
@@ -223,26 +229,26 @@ function renderUserPosts() {
         postActions.className = 'post-actions';
 
         var likeButton = document.createElement('button');
-        likeButton.textContent = 'Like (' + post.likes + ')';
+        likeButton.innerHTML = '<i class="fa-regular fa-heart"></i>  ' + post.likes + '';
         likeButton.onclick = function () {
             likePost(index);
         };
 
         var saveButton = document.createElement('button');
-        saveButton.textContent = 'Save (' + post.saves + ')';
+        saveButton.innerHTML = '<i class="far fa-bookmark"></i>  ' + post.saves + ' ';
         saveButton.onclick = function () {
             savePost(index);
         };
 
         var commentButton = document.createElement('button');
-        commentButton.textContent = 'Comment';
+        commentButton.innerHTML = '<i class="far fa-comment"></i> ';
         commentButton.onclick = function () {
-            var comment = prompt('Yorumunuzu girin:');
+            var comment = prompt('adad to a comment');
             commentOnPost(index, comment);
         };
 
         var deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
+        deleteButton.innerHTML = '<i class="fas fa-trash"></i> ';
         deleteButton.onclick = function () {
             deletePost(index);
         };

@@ -1,20 +1,113 @@
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Temel stil */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
     padding: 20px;
-}
-
-h1 {
+  }
+  
+  h1 {
     text-align: center;
-}
-
-.post-list {
-    margin-top: 20px;
-}
-
-.post-list div {
+  }
+  
+  .liked-post {
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     padding: 10px;
+  }
+  
+  .liked-post img {
+    max-width: 100%;
+  }
+  
+  .user {
+    display: flex;
+    align-items: center;
     margin-bottom: 10px;
-}
+  }
+  
+  .user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
 
+
+
+
+
+
+
+// /* Temel stiller */
+// body {
+//     font-family: Arial, sans-serif;
+//     margin: 0;
+//     padding: 0;
+//     background-color: #f0f0f0;
+//   }
+  
+//   .container {
+//     max-width: 800px;
+//     margin: 0 auto;
+//     padding: 20px;
+//   }
+  
+//   h1 {
+//     text-align: center;
+//   }
+  
+//   .post {
+//     background-color: #fff;
+//     border-radius: 5px;
+//     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+//     margin-bottom: 20px;
+//     padding: 20px;
+//   }
+  
+//   .post img {
+//     max-width: 100%;
+//     border-radius: 5px;
+//     margin-bottom: 10px;
+//   }
+  
+//   .post p {
+//     margin-bottom: 10px;
+//   }
+  
+//   .actions {
+//     margin-top: 10px;
+//   }
+  
+//   .actions button {
+//     margin-right: 10px;
+//     padding: 5px 10px;
+//     border-radius: 3px;
+//     background-color: #3498db;
+//     color: #fff;
+//     border: none;
+//     cursor: pointer;
+//   }
+  
+//   .actions button:hover {
+//     background-color: #2980b9;
+//   }
+  
