@@ -1,6 +1,3 @@
-
-
-
 var userProfile = {
     profilePicture: '',
     username: '',
@@ -21,7 +18,6 @@ function updateProfile() {
     var newBio = document.getElementById('new-bio').value;
     var newProfilePicture = document.getElementById('new-profile-picture').files[0];
 
-    // Profil sayfasındaki etiketleri güncelle
     document.getElementById('current-username').innerText = newUsername;
     document.getElementById('current-bio').innerText = newBio;
 
@@ -30,27 +26,22 @@ function updateProfile() {
         reader.onload = function (e) {
             document.getElementById('profile-picture').src = e.target.result;
 
-            // userProfile nesnesini güncelle
             userProfile.username = newUsername;
             userProfile.bio = newBio;
-            userProfile.profilePicture = e.target.result; // Base64 formatında fotoğrafı kaydet
+            userProfile.profilePicture = e.target.result;
 
-            saveUserProfile(); // Değişiklikleri yerel depolamada kaydet
+            saveUserProfile();
         };
         reader.readAsDataURL(newProfilePicture);
     }
 
     closeEditModal();
 }
-
-// Diğer fonksiyonlarınızı buraya ekleyin...
-// Takip edilen kullanıcıları saklamak için boş bir dizi tanımlayın
 var followingUsers = [];
-
 function searchUsers() {
     var searchInput = document.getElementById('searchInput').value.trim().toLowerCase();
     if (searchInput === '') {
-        alert('Lütfen bir arama terimi girin.');
+
         return;
     }
 
@@ -59,9 +50,11 @@ function searchUsers() {
         .then(users => {
             var searchResults = users.filter(user => user.name.toLowerCase().includes(searchInput));
             displaySearchResults(searchResults);
+            document.getElementById('searchInput').value = '';
         })
         .catch(error => console.error('Arama sırasında bir hata oluştu: ', error));
 }
+
 
 function displaySearchResults(results) {
     var searchResultsContainer = document.getElementById('searchResults');
@@ -69,11 +62,12 @@ function displaySearchResults(results) {
 
     results.forEach(user => {
         var userElement = document.createElement('div');
+        userElement.className = ('users')
         userElement.textContent = user.name;
 
         var followButton = document.createElement('button');
         followButton.textContent = 'Follow';
-        followButton.onclick = function() {
+        followButton.onclick = function () {
             followUser(user);
         };
 
@@ -116,8 +110,6 @@ function showFollowingList() {
         followingListContainer.appendChild(listItem);
     });
 }
-
-// Sayfa yüklendiğinde takip edilen kullanıcıları yükleyin
 document.addEventListener('DOMContentLoaded', function () {
     loadFollowingList();
 });
@@ -144,7 +136,6 @@ function renderUserProfile() {
     }
 }
 
-// Profil bilgilerini yüklemek için
 document.addEventListener('DOMContentLoaded', function () {
     loadUserProfile();
 });
@@ -208,7 +199,7 @@ function commentOnPost(index, comment) {
     userPosts[index].comments.push(comment);
     renderUserPosts();
     saveToLocalStorage();
-}function renderUserPosts() {
+} function renderUserPosts() {
     var postContainer = document.getElementById('posts-container');
 
     postContainer.innerHTML = '';
@@ -309,7 +300,6 @@ function renderUserProfile() {
 }
 
 
-// Profil bilgilerini yüklemek için
 function loadUserProfile() {
     var storedProfile = localStorage.getItem('userProfile');
 
@@ -319,7 +309,6 @@ function loadUserProfile() {
     }
 }
 
-// Profil bilgilerini kaydetmek için
 function saveUserProfile() {
     localStorage.setItem('userProfile', JSON.stringify(userProfile));
 }

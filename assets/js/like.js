@@ -1,6 +1,3 @@
-
-
-
 var userProfile = {
     profilePicture: '',
     username: '',
@@ -21,7 +18,7 @@ function updateProfile() {
     var newBio = document.getElementById('new-bio').value;
     var newProfilePicture = document.getElementById('new-profile-picture').files[0];
 
-    // Profil sayfasındaki etiketleri güncelle
+
     document.getElementById('current-username').innerText = newUsername;
     document.getElementById('current-bio').innerText = newBio;
 
@@ -30,21 +27,18 @@ function updateProfile() {
         reader.onload = function (e) {
             document.getElementById('profile-picture').src = e.target.result;
 
-            // userProfile nesnesini güncelle
+
             userProfile.username = newUsername;
             userProfile.bio = newBio;
-            userProfile.profilePicture = e.target.result; // Base64 formatında fotoğrafı kaydet
+            userProfile.profilePicture = e.target.result;
 
-            saveUserProfile(); // Değişiklikleri yerel depolamada kaydet
+            saveUserProfile();
         };
         reader.readAsDataURL(newProfilePicture);
     }
 
     closeEditModal();
 }
-
-// Diğer fonksiyonlarınızı buraya ekleyin...
-// Takip edilen kullanıcıları saklamak için boş bir dizi tanımlayın
 var followingUsers = [];
 
 function searchUsers() {
@@ -73,7 +67,7 @@ function displaySearchResults(results) {
 
         var followButton = document.createElement('button');
         followButton.textContent = 'Follow';
-        followButton.onclick = function() {
+        followButton.onclick = function () {
             followUser(user);
         };
 
@@ -117,7 +111,6 @@ function showFollowingList() {
     });
 }
 
-// Sayfa yüklendiğinde takip edilen kullanıcıları yükleyin
 document.addEventListener('DOMContentLoaded', function () {
     loadFollowingList();
 });
@@ -144,12 +137,9 @@ function renderUserProfile() {
     }
 }
 
-// Profil bilgilerini yüklemek için
 document.addEventListener('DOMContentLoaded', function () {
     loadUserProfile();
-});
-
-document.addEventListener('DOMContentLoaded', function() {
+}); document.addEventListener('DOMContentLoaded', function () {
     const likedPosts = JSON.parse(localStorage.getItem('likedPosts')) || [];
     const savedPosts = JSON.parse(localStorage.getItem('savedPosts')) || [];
     const likedPostsContainer = document.getElementById('liked-posts');
@@ -158,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
     likedPosts.forEach(postId => fetchPost(postId, likedPostsContainer, 'liked'));
     savedPosts.forEach(postId => fetchPost(postId, savedPostsContainer, 'saved'));
 
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
         const target = event.target;
         if (target.classList.contains('like-button')) {
             const postId = target.getAttribute('data-post-id');
@@ -167,10 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    function likePost(postId) {
-        likedPosts.push(postId);
-        localStorage.setItem('likedPosts', JSON.stringify(likedPosts));
-    }
+
 
     function deletePost(postId, type) {
         const container = type === 'liked' ? likedPostsContainer : savedPostsContainer;
@@ -187,45 +174,31 @@ document.addEventListener('DOMContentLoaded', function() {
     function fetchPost(postId, container, type) {
         fetch(`https://65ca5a7b3b05d29307e03692.mockapi.io/posts/${postId}`)
             .then(response => response.json())
-            .then(post => container.appendChild(createPostElement(post, type)))
+            .then(post => container.innerHTML += createPostElement(post, type))
             .catch(error => console.error('There was a problem fetching the post:', error));
     }
 
     function createPostElement(post, type) {
-        const postElement = document.createElement('div');
-        postElement.classList.add('post');
-        postElement.setAttribute('data-post-id', post.id);
-
-        const postPhoto = document.createElement('img');
-        postPhoto.src = post.postphoto;
-        postElement.appendChild(postPhoto);
-
-        const profilePhoto = document.createElement('img');
-        profilePhoto.src = `https://i.pravatar.cc/50?u=${post.profilephoto}`;
-        postElement.appendChild(profilePhoto);
-
-        const nameElement = document.createElement('p');
-        nameElement.textContent = post.name;
-        postElement.appendChild(nameElement);
-
-        const captionElement = document.createElement('p');
-        captionElement.textContent = post.caption;
-        postElement.appendChild(captionElement);
-
-        const likeButton = document.createElement('button');
-        likeButton.innerHTML = '<i class="fas fa-heart"></i> Beğen';
-        likeButton.classList.add('like-button');
-        likeButton.setAttribute('data-post-id', post.id);
-        postElement.appendChild(likeButton);
-
-        if (type === 'liked') {
-            const deleteButton = document.createElement('button');
-            deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
-            deleteButton.classList.add('delete-button');
-            deleteButton.onclick = () => deletePost(post.id, 'liked');
-            postElement.appendChild(deleteButton);
-        }
-
+        const postElement = `
+        <div class="post" data-post-id="${post.id}">
+            <div class="avatar-container">
+                <img src="https://i.pravatar.cc/50?u=${post.profilePhoto}" alt="Avatar">
+                <p>${post.name}</p>
+            </div>
+            <img src="${post.postphoto}" alt="Post Photo">
+            <p>${post.caption}</p>
+            <div class="buttonDiv">
+                <button class="like-button" onclick="likePost(${post.id})"><i class="fa-regular fa-heart"></i></button>
+                <button class="save-button" onclick="savePost(${post.id})"><i class="far fa-bookmark"></i> </button>
+                <button class="comment-button" onclick="toggleCommentInput(${post.id})"><i class="far fa-comment"></i> </button>
+                <input class="comment-input" type="text" placeholder="Yorumunuzu buraya girin...">
+                <button class="send-comment-button" onclick="sendComment(${post.id})">Gönder</button>
+             
+            </div>
+            <div class="comment-area"></div>
+        </div>
+        `;
         return postElement;
     }
+
 });

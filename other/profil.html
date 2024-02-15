@@ -15,10 +15,10 @@
   
 </head> 
  <body>
- <div class="container">
+ <div class="container-profil" >
   <div class="row">
 
-    <div class="col-xl-2">
+    <div class="col-xl-2 col-md-3 col-sm-0  ">
        <div class="left-toolbar">
     
     <div class="logo" onclick="showHomePage()">ihobby</div>
@@ -30,7 +30,7 @@
     <button onclick="showCreatePostForm()"><i class="fa-solid fa-plus"></i>  Create</button>
     <button onclick="showBookmarks()"> <a href="/other/like.html"><i class="fa-regular fa-heart"></i>  Like</a>  </button>
   <button onclick="showSavedPosts()"> <a href="/other/save.html"><i class="fa-regular fa-bookmark"></i>  Save</a></button>
-  <button onclick="showSettings()"><i class="fa-solid fa-gear"></i>  Settings</button>
+ 
 
 </div>
 
@@ -38,9 +38,10 @@
 
 </div>
 
-<div class="col-xl-8" id="profilDiv"> 
-<div class="right-place"><div id="profile-container">
-    <img id="profile-picture" alt="Profil Fotoğrafı">
+<div class="col-xl-8 col-md-9 col-sm-12" id="profilDiv"> 
+<div class="right-place">
+  <div id="profile-container">
+    <img id="profile-picture" alt="Profil photo">
     
       
    
@@ -48,15 +49,19 @@
       <div id="follows"> 
        
        <button id="followbutton" onclick="showFollowingList()">Following <span id="followingCount">0</span></button>
- 
+       <button id="followbutton" onclick="showFollowingList()">Followers <span id="followingCount">0</span></button>
+
     
           <button class="editbtn" onclick="openEditModal()">Edit Profil</button>
 
       </div>
     </div>    
   </div> 
-  <p id="username"><span id="current-username">Username</span></p>
+  <div class="pDiv">
+     <p id="username"><span id="current-username">Username</span></p>
 <p id="bio"><span id="current-bio">Biography</span></p>
+  </div>
+ 
 
   <div id="edit-modal" class="modal">
     <div class="modal-content">
@@ -89,7 +94,7 @@
 </div>
  </div>
 
- <div class="col-xl-2">
+ <div class="col-xl-2 col-md-0">
 <div class="right-toolbar">
   <div class="fllw">
   
@@ -100,8 +105,7 @@
  
   <div id="searchResults"></div>
   <div id="followingList">
-   
-    <ul id="followingUsers"></ul>
+<  <ul id="followingUsers"></ul>
 </div>
 
  

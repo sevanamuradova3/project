@@ -88,21 +88,20 @@ a{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    background-color: #DCF8C6; /* Kullanıcı mesajlarının arka plan rengi */
+    background-color: #DCF8C6; 
     margin-left: auto;
-    margin-bottom: 5px; /* Mesajlar arası boşluk ekleyebilirsiniz */
+    margin-bottom: 5px;
     padding: 5px;
-    border-radius: 10px; /* Mesaj kutusuna kenar yuvarlatma ekleyebilirsiniz */
+    border-radius: 10px;
 }
 
 .bot-message {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    background-color: #EAEAEA; /* Bot mesajlarının arka plan rengi */
+    background-color: #EAEAEA;
     margin-right: auto;
-    margin-bottom: 5px; /* Mesajlar arası boşluk ekleyebilirsiniz */
+    margin-bottom: 5px;
     padding: 5px;
-    border-radius: 10px; /* Mesaj kutusuna kenar yuvarlatma ekleyebilirsiniz */
-}
+    border-radius: 10px;}
 

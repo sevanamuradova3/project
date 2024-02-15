@@ -111,20 +111,19 @@ h1 {
 
 #followingUsers {
     list-style-type: none;
-    /* Madde işaretlerini kaldırır */
     padding: 0;
-    /* Boşlukları kaldırır */
+
 }
 
 #followingUsers li {
     margin-bottom: 5px;
-    /* Her liste öğesi arasına boşluk ekler */
+ 
     padding: 5px;
-    /* Öğelerin iç boşluğunu belirler */
+
     border: 1px solid #ccc;
-    /* Kenarlık ekler */
+ 
     background-color: #f9f9f9;
-    /* Arka plan rengini belirler */
+  
 }
 
 #profile-container {

@@ -19,6 +19,11 @@ body {
   gap: 20px;
 }
 
+#loginPage {
+  display: flex;
+
+}
+
 .logo {
 
   color: #fff;
@@ -56,37 +61,43 @@ form {
 .post {
   display: flex;
   flex-direction: column;
-margin: 28px;
+  margin: 28px;
   margin-bottom: 20px;
   border: none;
   padding: 25px;
 }
-.avatar-container{
+
+.avatar-container {
   display: flex;
   align-items: center;
   text-align: center;
+  margin: 15px;
 }
+
 .avatar-container img {
   max-width: 100%;
   border-radius: 50%;
 }
 
-.post  img  {
+.post img {
   max-width: 100%;
- 
+
 }
-#profilDiv{
+
+#profilDiv {
   border-left: 1px solid gray;
   border-right: 1px solid gray;
 
 }
-.buttonDiv{
+
+.buttonDiv {
   display: flex;
 }
+
 .like-button,
 .save-button,
 .comment-button {
-  background-color: #ccc;
+  background-color: transparent;
   color: #333;
   padding: 5px 10px;
   border: none;
@@ -95,27 +106,26 @@ margin: 28px;
 }
 
 .like-button.liked {
-  background-color: #5897fb; /* Beğenildiğinde rengi değiştir */
-  color: #fff; /* Beğenildiğinde yazı rengini değiştir */
+  color: #f44336;
 }
 
 .save-button.saved {
-  background-color: #f44336; /* Kaydedildiğinde rengi değiştir */
-  color: #fff; /* Kaydedildiğinde yazı rengini değiştir */
+  color: #5897fb;
+
 }
 
 .comment-input {
-  display: none; /* İlk başta gizli olacak */
+  display: none;
 }
 
 .send-comment-button {
-  display: none; /* İlk başta gizli olacak */
+  display: none
 }
 
 .comment-area {
   margin-top: 10px;
   padding: 10px;
- 
+
 }
 
 
@@ -146,14 +156,13 @@ margin: 28px;
 
 }
 
-/* Ana içerik alanı için stil */
 
-.followed-profiles{
-  position: relative; 
-  
+.followed-profiles {
+  position: relative;
+
   background-color: #F4F4F4;
   max-width: fit-content;
-  margin:0px 4px;
+  margin: 0px 4px;
 }
 
 .followed-profiles h2 {
@@ -166,16 +175,16 @@ margin: 28px;
   list-style: none;
   display: flex;
   gap: 20px;
-  
- 
-  
 
- 
+
+
+
+
 }
 
 .followed-profiles li {
   margin-bottom: 10px;
-align-items: center;
+  align-items: center;
   overflow: hidden;
   width: 79px;
   display: flex;
@@ -202,24 +211,26 @@ align-items: center;
   display: flex;
   flex-direction: column;
   text-align: center;
-text-decoration: none;
+  text-decoration: none;
   color: black;
   justify-content: space-between;
   align-content: space-around;
-padding: 25px;
+  padding: 25px;
   align-items: start;
   color: black;
   position: fixed;
-  
+
 }
-a{
+
+a {
   text-decoration: none;
   color: black;
 }
 
-.left-toolbars button{
+.left-toolbars button {
   background-color: transparent;
 }
+
 .logo {
   font-size: 24px;
   font-weight: bold;
@@ -231,6 +242,10 @@ h1 {
   text-align: center;
 }
 
+.container-profil {
+  width: 100%;
+}
+
 .searchByName {
   display: flex;
   text-align: center;
@@ -239,42 +254,52 @@ h1 {
   height: 60px;
 
 }
-.fllw{
+
+.fllw {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+
 #searchInput {
   width: 100%;
-height: 30px;
- border: 0.5px solid gray;
+  height: 30px;
+  border: 0.5px solid gray;
   border-radius: 20px;
   padding: 5px;
 
 }
 
 #searchButton {
- text-align: center;
+  text-align: center;
   border: none;
   cursor: pointer;
   height: 50px;
-  align-items: center;  
- 
+  align-items: center;
+
   padding: 5px;
 }
 
 #followingButton {
-background-color: transparent;
+  background-color: transparent;
 
-  
+
 }
 
 
 
-#searchResults {
-  margin-top: 20px;
+#searchResults .users {
+
+  display: flex;
+
+}
+
+#searchResults .users button {
+  background-color: #3e9cff;
+  padding-bottom: -20px;
+  height: 20px;
 }
 
 .user-profile {
@@ -293,7 +318,7 @@ background-color: transparent;
 }
 
 .follow-button {
- 
+
   border: none;
   border-radius: 3px;
   padding: 5px 10px;
@@ -306,17 +331,16 @@ background-color: transparent;
 
 #followingUsers {
   list-style-type: none;
-  /* Madde işaretlerini kaldırır */
+
   padding: 0;
-  /* Boşlukları kaldırır */
+
 }
 
 #followingUsers li {
   margin-bottom: 5px;
-  
   padding: 5px;
 
-  border: 1px solid #ccc;
+
 
 }
 
@@ -330,6 +354,11 @@ background-color: transparent;
 
 }
 
+.pDiv {
+  margin-left: 20px;
+  padding: 20px;
+}
+
 #profile-container #follows {
   display: flex;
   flex-direction: row;
@@ -338,16 +367,16 @@ background-color: transparent;
 
 #profile-picture {
   max-width: 100%;
-  width: 20%;
+  width: 100px;
+  height: 100px;
 
   border-radius: 50%;
 }
 
 
 
-#username
- {
-font-size: 18px;
+#username {
+  font-size: 18px;
 }
 
 #activity-container {
@@ -360,7 +389,8 @@ font-size: 18px;
 
   background-color: transparent;
 }
-#follows{
+
+#follows {
   align-items: center;
 }
 
@@ -379,14 +409,16 @@ font-size: 18px;
   margin-bottom: 20px;
   padding: 10px;
 }
-.content{
 
- border-left: 1px solid gray;
- border-right: 1px solid gray;
-
-}
 .hidden {
   display: none;
+}
+
+
+.center {
+  border-right: 1px solid gray;
+
+  border-left: 1px solid
 }
 
 .content #postList {
@@ -401,7 +433,8 @@ font-size: 18px;
 
 #posts-container .post img {
   max-width: 100%;
-  border-radius: 8px;
+
+
 }
 
 #posts-container .post .post-title {
@@ -411,16 +444,16 @@ font-size: 18px;
 
 #posts-container .post .post-actions {
   display: flex;
-  /* justify-content: space-between;*/
+
 }
 
 #posts-container .post .post-actions button {
- background-color: transparent;
-  padding: 10px ;
+  background-color: transparent;
+  padding: 10px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
- /* margin-right: 5px; */
+
 }
 
 
@@ -430,51 +463,53 @@ font-size: 18px;
   justify-content: center;
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 2px;
 
 }
 
 #postList .post {
   width: 70%;
-border: none;
+  border: none;
   display: flex;
   align-items: stretch;
   flex-direction: column;
- justify-content: start;
+  justify-content: start;
   border-radius: 8px;
   padding: 10px;
   box-sizing: border-box;
   overflow: hidden;
 }
-.username{
+
+.username {
   height: 20px;
 }
+
 .user-info {
   display: flex;
   align-items: center;
-  margin:20px  10px;
+  margin: 20px 10px;
 }
 
 .user-info img {
 
   max-width: 100%;
-margin-right: 5px;
+  margin-right: 5px;
   border-radius: 50%;
- 
+
 }
 
 #postList .post .actions {
-align-items: start;
-display: flex;
+  align-items: start;
+  display: flex;
   margin-top: 10px;
 }
 
 .actions button {
-background-color: transparent;
+  background-color: transparent;
   color: black;
- 
+
   border: none;
-  
+
   cursor: pointer;
   margin-right: 10px;
 }
@@ -508,27 +543,30 @@ background-color: transparent;
 }
 
 
-.post-columns .post img{
+.post-columns .post img {
   width: 300px;
   height: 300px;
 }
-.post .user img{
-   max-width: 100%;
+
+.post .user img {
+  max-width: 100%;
   width: 50px;
   border-radius: 50%;
   margin: 10px;
- 
+
 }
-.user{
-   display: flex;
-   background-color: #f1ccd4;
+
+.user {
+  display: flex;
+  background-color: #f1ccd4;
   justify-content: flex-end;
   align-items: center;
   text-align: center;
 }
+
 .post img {
- 
-  
+
+
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -569,6 +607,7 @@ p {
   font-weight: bold;
   cursor: pointer;
 }
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -604,9 +643,9 @@ input[type="text"] {
 
 button {
   padding: 10px 20px;
- color: black;
+  color: black;
   border: none;
- 
+
   border-radius: 5px;
   cursor: pointer;
 }
@@ -617,66 +656,130 @@ button {
 }
 
 .like-btn {
- background-color: transparent;
+  background-color: transparent;
   cursor: pointer;
   margin-left: 10px;
 }
-/* Sil ikonunu varsayılan olarak gizle */
+
 .delete-icon {
   display: none;
 }
 
-/* Mesajın üzerine gelindiğinde sil ikonunu göster */
 .message:hover .delete-icon {
   display: inline;
 }
 
-.user-message  {
+.user-message {
 
-  background-color: #DCF8C6; /* Kullanıcı mesajlarının arka plan rengi */
+  background-color: #DCF8C6;
   margin-left: auto;
-  margin-bottom: 5px; /* Mesajlar arası boşluk ekleyebilirsiniz */
+  margin-bottom: 5px;
   padding: 5px;
-  border-radius: 10px; /* Mesaj kutusuna kenar yuvarlatma ekleyebilirsiniz */
+  border-radius: 10px;
 }
- 
+
 .bot-message {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  background-color: #EAEAEA; /* Bot mesajlarının arka plan rengi */
+  background-color: #EAEAEA;
   margin-right: auto;
-  margin-bottom: 5px; /* Mesajlar arası boşluk ekleyebilirsiniz */
+  margin-bottom: 5px;
   padding: 5px;
-  border-radius: 10px; /* Mesaj kutusuna kenar yuvarlatma ekleyebilirsiniz */
+  border-radius: 10px;
 }
 
 
-.container {
- 
-  margin: 0 auto;
-  text-align: center;
-}
 
 h1 {
   margin-bottom: 20px;
 }
 
 .login-form,
-.register-form input {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
+.register-form {
+  padding: 28px;
+  margin: 28px;
+
+
 }
 
-.login-form,
-.register-form  button {
+.loginFormDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 28px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+}
+
+.loginFormDiv .login-form {
+  margin: 28px;
+}
+
+.col-xl-6 {
+  display: flex;
+  justify-content: center;
+}
+
+.loginFormDiv input {
+  width: 100%;
+  border-radius: 9px;
+  border: 1px solid gray;
+  padding: 10px;
+  margin: 10px 28px;
+}
+
+.logoDiv {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+}
+
+.logoDiv h1,
+.logoDiv h2 {
+  display: inline-block;
+  animation: fadeIn 1s forwards;
+  opacity: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logoDiv h1 {
+  font-size: 80px;
+  margin-top: 20px;
+
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  align-items: center;
+}
+
+.loginFormDiv button {
   width: 100%;
   padding: 10px;
+  margin: 0px 28px;
   background-color: #007bff;
   color: #fff;
   border: none;
   cursor: pointer;
+  border-radius: 9px;
+
 }
 
 .login-form,
@@ -700,4 +803,25 @@ h1 {
   display: none;
   color: #007bff;
   text-decoration: none;
+}
+
+@media screen and (max-width: 719px) {
+
+  .left-toolbar,
+  .right-toolbar {
+    display: none;
+  }
+}
+
+#liked-posts {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.right-place {
+  margin-left: 20px;
+
 }
