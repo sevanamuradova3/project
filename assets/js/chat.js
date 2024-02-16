@@ -34,7 +34,7 @@ function sendBotReply() {
     var botMessage = {
        
         id: generateId(),
-        text: "Merhaba! Ben bir botum",
+        text: "hi,i'm bot",
         sender: "bot",
         liked: false 
     };

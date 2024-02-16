@@ -702,13 +702,19 @@ h1 {
 
 
 }
+#register-form input{
+  width: 400px;
+}
+#register-form button{
+  width: 400px;
+}
 
 .loginFormDiv {
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin: 28px;
-  width: 100%;
+  width: 500px;
   height: 100%;
   align-items: center;
   text-align: center;

@@ -52,7 +52,7 @@ function searchUsers() {
             displaySearchResults(searchResults);
             document.getElementById('searchInput').value = '';
         })
-        .catch(error => console.error('Arama sırasında bir hata oluştu: ', error));
+        .catch(error => console.error('error: ', error));
 }
 
 

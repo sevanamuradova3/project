@@ -1,3 +1,29 @@
+function fetchFollowedProfiles() {
+  return fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json());
+}
+
+function createFollowedProfilesList(profiles) {
+  const followedProfilesListElement = document.getElementById('followedProfilesList');
+  followedProfilesListElement.innerHTML = '';
+
+  profiles.forEach(profile => {
+      const profileListItem = document.createElement('li');
+      profileListItem.innerHTML = `
+          <img src="https://i.pravatar.cc/50?u=${profile.id}" alt="${profile.username} Avatar">
+          <span>${profile.username}</span>
+      `;
+      profileListItem.addEventListener('click', () => showProfileDetails(profile.id));
+      followedProfilesListElement.appendChild(profileListItem);
+  });
+}
+
+
+
+
+
+fetchFollowedProfiles().then(createFollowedProfilesList);
+
 function fetchPosts() {
     axios.get('https://65ca5a7b3b05d29307e03692.mockapi.io/posts')
       .then(response => {
@@ -19,8 +45,8 @@ function fetchPosts() {
             <button class="like-button" onclick="likePost(${post.id})"><i class="fa-regular fa-heart"></i></button>
             <button class="save-button" onclick="savePost(${post.id})"><i class="far fa-bookmark"></i> </button>
             <button class="comment-button" onclick="toggleCommentInput(${post.id})"><i class="far fa-comment"></i> </button>
-            <input class="comment-input" type="text" placeholder="Yorumunuzu buraya girin...">
-            <button class="send-comment-button" onclick="sendComment(${post.id})">Gönder</button>
+            <input class="comment-input" type="text" placeholder="add a comment...">
+            <button class="send-comment-button" onclick="sendComment(${post.id})">Send</button>
            
             </div>
              <div class="comment-area"></div>
